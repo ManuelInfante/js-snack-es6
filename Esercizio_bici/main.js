@@ -38,4 +38,11 @@ const myFunction = () => {
 
 console.log(myFunction())
 
-document.getElementById('bici_leggera').innerHTML = 'La Bici più leggera della lista è: ' + myFunction().nome + ' che pesa solo: ' + myFunction().peso + 'kg!';
+// Stampare con l'ausilio del destructuring e template literal
+
+const {nome, peso} = biciLeggera;
+
+document.getElementById('bici_leggera').innerHTML =
+`
+La Bici più leggera della lista è: ${nome}, che pesa solo: ${peso} kg!
+`

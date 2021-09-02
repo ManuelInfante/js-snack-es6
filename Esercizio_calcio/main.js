@@ -14,14 +14,36 @@ const teamCalcio = [
     {nome: 'Milan', punti: 0, falli: 0},
 ]
 
+const randomNum = ( min, max) => {
+    min = Math.ceil(min),
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // console.log(punti, falli);
 
 for(let i = 0; i < teamCalcio.length; i++){
 
-    teamCalcio[i].punti = Math.floor(Math.random() * 100) + 1;
+    teamCalcio[i].punti = randomNum(0, 10);
     teamCalcio[i].falli = Math.floor(Math.random() * 100) + 1;
 };
 
+for(let i = 0; i < teamCalcio.length; i++){
+
+    teamCalcio[i].punti = randomNum(0, 10);
+    teamCalcio[i].falli = randomNum(0, 10);
+};
+
+console.log(teamCalcio)
+
+const newTeams = [];
+
+for (let i = 0; i < teamCalcio.length; i++){
+    const {nome, falli} = teamCalcio[i];
+    newTeams.push(nome, falli);
+}
+
+console.log(newTeams);
 
 // const [] = teamCalcio;
 
@@ -29,13 +51,13 @@ for(let i = 0; i < teamCalcio.length; i++){
 
 // console.log(teamInfo)
 
-const teamInfo = [];
+// const teamInfo = [];
 
-for(let i = 0; i < teamCalcio.length; i++){
+// for(let i = 0; i < teamCalcio.length; i++){
     
-    teamInfo.push(teamCalcio[i].nome)
+//     teamInfo.push(teamCalcio[i].nome)
 
-    teamInfo.push(teamCalcio[i].punti)
-}
+//     teamInfo.push(teamCalcio[i].punti)
+// }
 
-console.log(teamInfo)
+// console.log(teamInfo)
